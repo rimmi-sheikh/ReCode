@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(240, 5%, 90%);
+  --card: hsl(240, 10%, 15%);
+  --card-foreground: hsl(240, 5%, 90%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(240, 5%, 90%);
+  --primary: hsl(271, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(188, 100%, 50%);
+  --secondary-foreground: hsl(240, 10%, 4%);
+  --muted: hsl(240, 10%, 15%);
+  --muted-foreground: hsl(240, 5%, 64%);
+  --accent: hsl(271, 100%, 50%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(240, 20%, 20%);
+  --input: hsl(240, 10%, 15%);
+  --ring: hsl(271, 100%, 50%);
+  --chart-1: hsl(271, 100%, 50%);
+  --chart-2: hsl(188, 100%, 50%);
+  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
+  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
+  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
+  --sidebar: hsl(240, 10%, 15%);
+  --sidebar-foreground: hsl(240, 5%, 90%);
+  --sidebar-primary: hsl(271, 100%, 50%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(240, 20%, 20%);
+  --sidebar-accent-foreground: hsl(240, 5%, 90%);
+  --sidebar-border: hsl(240, 20%, 20%);
+  --sidebar-ring: hsl(271, 100%, 50%);
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-orbitron: Orbitron, monospace;
+  --radius: 0.75rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00), 0px 1px 2px -1px hsl(271, 100%, 50%, 0.00);
+  --shadow: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00), 0px 1px 2px -1px hsl(271, 100%, 50%, 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00), 0px 2px 4px -1px hsl(271, 100%, 50%, 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00), 0px 4px 6px -1px hsl(271, 100%, 50%, 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00), 0px 8px 10px -1px hsl(271, 100%, 50%, 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(271, 100%, 50%, 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+  --neon-purple: #7a00ff;
+  --neon-blue: #00f5ff;
+}
+
+.dark {
+  --background: hsl(240, 10%, 4%);
+  --foreground: hsl(240, 5%, 90%);
+  --card: hsl(240, 10%, 15%);
+  --card-foreground: hsl(240, 5%, 90%);
+  --popover: hsl(240, 10%, 4%);
+  --popover-foreground: hsl(240, 5%, 90%);
+  --primary: hsl(271, 100%, 50%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(188, 100%, 50%);
+  --secondary-foreground: hsl(240, 10%, 4%);
+  --muted: hsl(240, 10%, 15%);
+  --muted-foreground: hsl(240, 5%, 64%);
+  --accent: hsl(271, 100%, 50%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --border: hsl(240, 20%, 20%);
+  --input: hsl(240, 10%, 15%);
+  --ring: hsl(271, 100%, 50%);
+  --chart-1: hsl(271, 100%, 50%);
+  --chart-2: hsl(188, 100%, 50%);
+  --chart-3: hsl(42.0290, 92.8251%, 56.2745%);
+  --chart-4: hsl(147.1429, 78.5047%, 41.9608%);
+  --chart-5: hsl(341.4894, 75.2000%, 50.9804%);
+  --sidebar: hsl(240, 10%, 15%);
+  --sidebar-foreground: hsl(240, 5%, 90%);
+  --sidebar-primary: hsl(271, 100%, 50%);
+  --sidebar-primary-foreground: hsl(0, 0%, 100%);
+  --sidebar-accent: hsl(240, 20%, 20%);
+  --sidebar-accent-foreground: hsl(240, 5%, 90%);
+  --sidebar-border: hsl(240, 20%, 20%);
+  --sidebar-ring: hsl(271, 100%, 50%);
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --font-orbitron: Orbitron, monospace;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .font-orbitron {
+    font-family: 'Orbitron', monospace;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px rgba(122, 0, 255, 0.5), 0 0 40px rgba(122, 0, 255, 0.3), 0 0 60px rgba(122, 0, 255, 0.1);
+  }
+
+  .neon-glow-blue {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.5), 0 0 40px rgba(0, 245, 255, 0.3), 0 0 60px rgba(0, 245, 255, 0.1);
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(122, 0, 255, 0.8), 0 0 50px rgba(122, 0, 255, 0.5), 0 0 70px rgba(122, 0, 255, 0.3);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow-blue:hover {
+    box-shadow: 0 0 30px rgba(0, 245, 255, 0.8), 0 0 50px rgba(0, 245, 255, 0.5), 0 0 70px rgba(0, 245, 255, 0.3);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  .text-neon {
+    color: #7a00ff;
+    text-shadow: 0 0 10px rgba(122, 0, 255, 0.8), 0 0 20px rgba(122, 0, 255, 0.5);
+  }
+
+  .text-neon-blue {
+    color: #00f5ff;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.8), 0 0 20px rgba(0, 245, 255, 0.5);
+  }
+
+  .grid-background {
+    background-image: 
+      linear-gradient(rgba(122, 0, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(122, 0, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: grid-flow 20s linear infinite;
+  }
+
+  .timeline-line {
+    background: linear-gradient(to bottom, #7a00ff, #00f5ff);
+    box-shadow: 0 0 10px rgba(122, 0, 255, 0.5);
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  @keyframes glow-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(122, 0, 255, 0.5), 0 0 30px rgba(122, 0, 255, 0.3); 
+    }
+    50% { 
+      box-shadow: 0 0 30px rgba(122, 0, 255, 0.8), 0 0 50px rgba(122, 0, 255, 0.5); 
+    }
+  }
+
+  @keyframes glow-pulse-blue {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(0, 245, 255, 0.5), 0 0 30px rgba(0, 245, 255, 0.3); 
+    }
+    50% { 
+      box-shadow: 0 0 30px rgba(0, 245, 255, 0.8), 0 0 50px rgba(0, 245, 255, 0.5); 
+    }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes grid-flow {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse-blue {
+    animation: glow-pulse-blue 2s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-grid-flow {
+    animation: grid-flow 20s linear infinite;
+  }
+}
