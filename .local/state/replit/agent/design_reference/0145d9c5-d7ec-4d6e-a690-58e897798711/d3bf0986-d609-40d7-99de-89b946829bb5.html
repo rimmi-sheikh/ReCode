@@ -1,0 +1,1016 @@
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCode - Empowering Women Through Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    border: "var(--border)",
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    }
+                },
+                fontFamily: {
+                    orbitron: ['Orbitron', 'monospace'],
+                    inter: ['Inter', 'sans-serif'],
+                },
+                animation: {
+                    'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
+                    'float': 'float 3s ease-in-out infinite',
+                    'grid-flow': 'grid-flow 20s linear infinite',
+                }
+            },
+        }
+    };
+    </script>
+
+    <style>
+        :root {
+            --background: hsl(240 10% 4%);
+            --foreground: hsl(240 5% 90%);
+            --primary: hsl(271 100% 50%);
+            --primary-foreground: hsl(0 0% 100%);
+            --secondary: hsl(188 100% 50%);
+            --secondary-foreground: hsl(240 10% 4%);
+            --accent: hsl(271 100% 50%);
+            --accent-foreground: hsl(0 0% 100%);
+            --border: hsl(240 20% 20%);
+            --muted: hsl(240 10% 15%);
+            --muted-foreground: hsl(240 5% 64%);
+            --radius: 0.75rem;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--foreground);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(122, 0, 255, 0.5), 0 0 40px rgba(122, 0, 255, 0.3), 0 0 60px rgba(122, 0, 255, 0.1);
+        }
+
+        .neon-glow-blue {
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.5), 0 0 40px rgba(0, 245, 255, 0.3), 0 0 60px rgba(0, 245, 255, 0.1);
+        }
+
+        .grid-background {
+            background-image: 
+                linear-gradient(rgba(122, 0, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(122, 0, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-flow 20s linear infinite;
+        }
+
+        @keyframes glow-pulse {
+            from { box-shadow: 0 0 20px rgba(122, 0, 255, 0.5), 0 0 30px rgba(122, 0, 255, 0.3); }
+            to { box-shadow: 0 0 30px rgba(122, 0, 255, 0.8), 0 0 50px rgba(122, 0, 255, 0.5); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes grid-flow {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(122, 0, 255, 0.8), 0 0 50px rgba(122, 0, 255, 0.5), 0 0 70px rgba(122, 0, 255, 0.3);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .hover-glow-blue:hover {
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.8), 0 0 50px rgba(0, 245, 255, 0.5), 0 0 70px rgba(0, 245, 255, 0.3);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+
+        .text-neon {
+            color: #7a00ff;
+            text-shadow: 0 0 10px rgba(122, 0, 255, 0.8), 0 0 20px rgba(122, 0, 255, 0.5);
+        }
+
+        .text-neon-blue {
+            color: #00f5ff;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.8), 0 0 20px rgba(0, 245, 255, 0.5);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .timeline-line {
+            background: linear-gradient(to bottom, #7a00ff, #00f5ff);
+            box-shadow: 0 0 10px rgba(122, 0, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navbar [sticky navigation with smooth scroll links] -->
+    <nav class="fixed top-0 w-full bg-background/90 backdrop-blur-md border-b border-border z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-orbitron font-bold text-neon">ReCode</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-foreground hover:text-neon transition-colors duration-300 font-medium" data-event="click:scrollToSection">Home</a>
+                        <a href="#about" class="text-foreground hover:text-neon transition-colors duration-300 font-medium" data-event="click:scrollToSection">About</a>
+                        <a href="#program" class="text-foreground hover:text-neon transition-colors duration-300 font-medium" data-event="click:scrollToSection">Program</a>
+                        <a href="#resources" class="text-foreground hover:text-neon transition-colors duration-300 font-medium" data-event="click:scrollToSection">Resources</a>
+                        <a href="#impact" class="text-foreground hover:text-neon transition-colors duration-300 font-medium" data-event="click:scrollToSection">Impact</a>
+                        <a href="#get-involved" class="text-foreground hover:text-neon transition-colors duration-300 font-medium" data-event="click:scrollToSection">Get Involved</a>
+                        <a href="#contact" class="text-foreground hover:text-neon transition-colors duration-300 font-medium" data-event="click:scrollToSection">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-foreground hover:text-neon transition-colors duration-300" data-event="click:toggleMobileMenu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu" data-implementation="Toggle visibility with JavaScript">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-md border-b border-border">
+                <a href="#home" class="block px-3 py-2 text-foreground hover:text-neon transition-colors duration-300">Home</a>
+                <a href="#about" class="block px-3 py-2 text-foreground hover:text-neon transition-colors duration-300">About</a>
+                <a href="#program" class="block px-3 py-2 text-foreground hover:text-neon transition-colors duration-300">Program</a>
+                <a href="#resources" class="block px-3 py-2 text-foreground hover:text-neon transition-colors duration-300">Resources</a>
+                <a href="#impact" class="block px-3 py-2 text-foreground hover:text-neon transition-colors duration-300">Impact</a>
+                <a href="#get-involved" class="block px-3 py-2 text-foreground hover:text-neon transition-colors duration-300">Get Involved</a>
+                <a href="#contact" class="block px-3 py-2 text-foreground hover:text-neon transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navbar -->
+
+    <!-- Home Section -->
+    <!-- @COMPONENT: HeroSection [animated hero with neon grid background] -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- @FUNCTIONALITY: Animated grid background using CSS animations -->
+        <div class="absolute inset-0 grid-background opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-cyan-900/20"></div>
+        
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <h1 class="text-6xl sm:text-7xl lg:text-8xl font-orbitron font-black mb-8 text-neon animate-glow-pulse">
+                ReCode
+            </h1>
+            <p class="text-xl sm:text-2xl lg:text-3xl mb-8 text-foreground font-light leading-relaxed" data-mock="true">
+                Empowering women in rural Pakistan through technology education and digital literacy
+            </p>
+            <p class="text-lg sm:text-xl mb-12 text-muted-foreground max-w-3xl mx-auto" data-mock="true">
+                Breaking barriers, building futures. Join us in transforming lives through code, one woman at a time.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button class="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg neon-glow hover-glow transition-all duration-300 text-lg" data-event="click:handleGetStarted">
+                    Get Started
+                </button>
+                <button class="px-8 py-4 bg-transparent border-2 border-secondary text-secondary font-semibold rounded-lg neon-glow-blue hover-glow-blue transition-all duration-300 text-lg" data-event="click:handleLearnMore">
+                    Learn More
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-primary rounded-full neon-glow animate-float"></div>
+        <div class="absolute top-40 right-20 w-6 h-6 bg-secondary rounded-full neon-glow-blue animate-float" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-3 h-3 bg-primary rounded-full neon-glow animate-float" style="animation-delay: 2s;"></div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- About Section -->
+    <!-- @COMPONENT: AboutSection [story with glowing timeline] -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-orbitron font-bold mb-6 text-neon">Our Story</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-mock="true">
+                    Born from resilience, driven by hope. ReCode emerged from the devastating floods in Pakistan to transform challenges into opportunities.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="fade-in">
+                    <!-- Placeholder for flood impact image -->
+                    <!-- A powerful image of flood-affected areas in Pakistan with women showing resilience -->
+                    <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Flood-affected area in Pakistan" class="rounded-xl shadow-2xl w-full h-auto neon-glow" />
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-3xl font-orbitron font-bold mb-6 text-neon-blue">From Crisis to Opportunity</h3>
+                    <p class="text-lg text-foreground mb-6 leading-relaxed" data-mock="true">
+                        The 2022 floods in Pakistan displaced millions, disproportionately affecting women in rural communities. In the face of this devastation, ReCode was born with a vision to rebuild lives through technology.
+                    </p>
+                    <p class="text-lg text-foreground leading-relaxed" data-mock="true">
+                        We focus on empowering women in Pahari-speaking regions, providing them with digital skills that transcend geographical boundaries and economic limitations.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="fade-in">
+                <h3 class="text-3xl font-orbitron font-bold mb-12 text-center text-neon">Our Journey</h3>
+                <div class="relative">
+                    <!-- Timeline line -->
+                    <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full timeline-line"></div>
+                    
+                    <!-- Timeline items -->
+                    <!-- @MAP: timelineItems.map(item => ( -->
+                    <div class="relative flex items-center justify-center mb-12">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-muted rounded-lg p-6 neon-glow hover-glow">
+                                    <h4 class="text-xl font-orbitron font-bold text-neon mb-2" data-mock="true">2022</h4>
+                                    <h5 class="text-lg font-semibold mb-2" data-mock="true">The Beginning</h5>
+                                    <p class="text-muted-foreground" data-mock="true">Floods devastate Pakistan. Founder begins solo journey to help affected communities.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full neon-glow z-10"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center justify-center mb-12">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 pr-8"></div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-secondary rounded-full neon-glow-blue z-10"></div>
+                            <div class="w-1/2 pl-8">
+                                <div class="bg-muted rounded-lg p-6 neon-glow-blue hover-glow-blue">
+                                    <h4 class="text-xl font-orbitron font-bold text-neon-blue mb-2" data-mock="true">2023</h4>
+                                    <h5 class="text-lg font-semibold mb-2" data-mock="true">First Pilot Program</h5>
+                                    <p class="text-muted-foreground" data-mock="true">Launch of digital literacy program in rural Pahari communities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center justify-center mb-12">
+                        <div class="flex items-center w-full">
+                            <div class="w-1/2 pr-8 text-right">
+                                <div class="bg-muted rounded-lg p-6 neon-glow hover-glow">
+                                    <h4 class="text-xl font-orbitron font-bold text-neon mb-2" data-mock="true">2024</h4>
+                                    <h5 class="text-lg font-semibold mb-2" data-mock="true">Expanding Impact</h5>
+                                    <p class="text-muted-foreground" data-mock="true">100+ women trained. Partnership network growing. Digital transformation in action.</p>
+                                </div>
+                            </div>
+                            <div class="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary rounded-full neon-glow z-10"></div>
+                            <div class="w-1/2 pl-8"></div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+
+            <!-- Founder Section -->
+            <div class="text-center mt-20 fade-in">
+                <div class="max-w-4xl mx-auto bg-muted rounded-2xl p-8 neon-glow">
+                    <h3 class="text-3xl font-orbitron font-bold mb-6 text-neon-blue">Founder's Journey</h3>
+                    <p class="text-lg text-foreground leading-relaxed" data-mock="true">
+                        "What started as a solo mission to help flood-affected communities has evolved into a movement. 
+                        Every line of code taught, every skill shared, represents hope for a better future. 
+                        We're not just teaching technology – we're building bridges to opportunity."
+                    </p>
+                    <p class="text-right text-neon mt-6 font-semibold" data-mock="true">- Rimmi, Founder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AboutSection -->
+
+    <!-- Program Section -->
+    <!-- @COMPONENT: ProgramSection [grid layout with glowing service cards] -->
+    <section id="program" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-orbitron font-bold mb-6 text-neon">Our Programs</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-mock="true">
+                    Comprehensive training modules designed to transform beginners into confident digital professionals.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- @MAP: programs.map(program => ( -->
+                <div class="bg-muted rounded-2xl p-8 neon-glow hover-glow transition-all duration-300 fade-in">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center neon-glow">
+                            <i class="fas fa-laptop-code text-2xl text-primary-foreground"></i>
+                        </div>
+                        <h3 class="text-2xl font-orbitron font-bold text-neon mb-4" data-mock="true">Digital Literacy</h3>
+                        <p class="text-muted-foreground leading-relaxed" data-mock="true">
+                            Foundation skills in computer operation, internet navigation, and basic software usage. Building confidence in the digital world.
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Basic Computer Skills</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Internet & Email</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Digital Communication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-8 neon-glow-blue hover-glow-blue transition-all duration-300 fade-in">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center neon-glow-blue">
+                            <i class="fas fa-code text-2xl text-secondary-foreground"></i>
+                        </div>
+                        <h3 class="text-2xl font-orbitron font-bold text-neon-blue mb-4" data-mock="true">Coding Foundations</h3>
+                        <p class="text-muted-foreground leading-relaxed" data-mock="true">
+                            Introduction to programming languages, web development basics, and problem-solving through code.
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">HTML & CSS</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">JavaScript Basics</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">Project Building</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-8 neon-glow hover-glow transition-all duration-300 fade-in">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center neon-glow">
+                            <i class="fas fa-bullhorn text-2xl text-primary-foreground"></i>
+                        </div>
+                        <h3 class="text-2xl font-orbitron font-bold text-neon mb-4" data-mock="true">Digital Marketing</h3>
+                        <p class="text-muted-foreground leading-relaxed" data-mock="true">
+                            Social media management, content creation, and online business strategies for entrepreneurial success.
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Social Media Strategy</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Content Creation</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Analytics & Growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-8 neon-glow-blue hover-glow-blue transition-all duration-300 fade-in">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center neon-glow-blue">
+                            <i class="fas fa-briefcase text-2xl text-secondary-foreground"></i>
+                        </div>
+                        <h3 class="text-2xl font-orbitron font-bold text-neon-blue mb-4" data-mock="true">Freelancing Skills</h3>
+                        <p class="text-muted-foreground leading-relaxed" data-mock="true">
+                            Professional development, client communication, and building sustainable online businesses from home.
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">Client Relations</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">Project Management</span>
+                        </div>
+                        <div class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">Income Generation</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-12 fade-in">
+                <button class="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-lg neon-glow hover-glow transition-all duration-300 text-lg" data-event="click:handleApplyNow">
+                    Apply Now
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ProgramSection -->
+
+    <!-- Resources Section -->
+    <!-- @COMPONENT: ResourcesSection [download library with glowing cards] -->
+    <section id="resources" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-orbitron font-bold mb-6 text-neon">Learning Resources</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-mock="true">
+                    Free resources to support your learning journey. Download guides, watch tutorials, and access our complete curriculum.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- @MAP: resources.map(resource => ( -->
+                <div class="bg-muted rounded-2xl p-6 neon-glow hover-glow transition-all duration-300 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center neon-glow">
+                            <i class="fas fa-file-pdf text-2xl text-primary-foreground"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-neon mb-3" data-mock="true">Beginner's Guide to Coding</h3>
+                        <p class="text-muted-foreground text-sm mb-4" data-mock="true">
+                            Comprehensive PDF guide covering the basics of programming and web development.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                            <span data-mock="true">PDF • 2.5 MB</span>
+                            <span data-mock="true">124 downloads</span>
+                        </div>
+                        <button class="w-full py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300" data-event="click:downloadResource" data-implementation="Should trigger PDF download">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-6 neon-glow-blue hover-glow-blue transition-all duration-300 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center neon-glow-blue">
+                            <i class="fas fa-play-circle text-2xl text-secondary-foreground"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-neon-blue mb-3" data-mock="true">Digital Literacy Video Series</h3>
+                        <p class="text-muted-foreground text-sm mb-4" data-mock="true">
+                            Step-by-step video tutorials in Urdu and English for complete beginners.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                            <span data-mock="true">Video • 12 Episodes</span>
+                            <span data-mock="true">2.1K views</span>
+                        </div>
+                        <button class="w-full py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors duration-300" data-event="click:watchVideos" data-implementation="Should open video playlist">
+                            <i class="fas fa-play mr-2"></i>Watch Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-6 neon-glow hover-glow transition-all duration-300 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center neon-glow">
+                            <i class="fas fa-chart-line text-2xl text-primary-foreground"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-neon mb-3" data-mock="true">Digital Marketing Toolkit</h3>
+                        <p class="text-muted-foreground text-sm mb-4" data-mock="true">
+                            Infographics, templates, and guides for social media marketing and content creation.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                            <span data-mock="true">ZIP • 15.2 MB</span>
+                            <span data-mock="true">89 downloads</span>
+                        </div>
+                        <button class="w-full py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300" data-event="click:downloadToolkit" data-implementation="Should trigger ZIP download">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-6 neon-glow-blue hover-glow-blue transition-all duration-300 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center neon-glow-blue">
+                            <i class="fas fa-laptop text-2xl text-secondary-foreground"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-neon-blue mb-3" data-mock="true">Practice Projects</h3>
+                        <p class="text-muted-foreground text-sm mb-4" data-mock="true">
+                            Real-world coding projects with step-by-step instructions and solution guides.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                            <span data-mock="true">GitHub • 8 Projects</span>
+                            <span data-mock="true">156 forks</span>
+                        </div>
+                        <button class="w-full py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors duration-300" data-event="click:viewProjects" data-implementation="Should open GitHub repository">
+                            <i class="fas fa-code mr-2"></i>View Projects
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-6 neon-glow hover-glow transition-all duration-300 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-primary rounded-full flex items-center justify-center neon-glow">
+                            <i class="fas fa-users text-2xl text-primary-foreground"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-neon mb-3" data-mock="true">Community Guidelines</h3>
+                        <p class="text-muted-foreground text-sm mb-4" data-mock="true">
+                            Best practices for online collaboration, networking, and building professional relationships.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                            <span data-mock="true">PDF • 1.8 MB</span>
+                            <span data-mock="true">67 downloads</span>
+                        </div>
+                        <button class="w-full py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/80 transition-colors duration-300" data-event="click:downloadGuidelines" data-implementation="Should trigger PDF download">
+                            <i class="fas fa-download mr-2"></i>Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-6 neon-glow-blue hover-glow-blue transition-all duration-300 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center neon-glow-blue">
+                            <i class="fas fa-certificate text-2xl text-secondary-foreground"></i>
+                        </div>
+                        <h3 class="text-xl font-orbitron font-bold text-neon-blue mb-3" data-mock="true">Certification Program</h3>
+                        <p class="text-muted-foreground text-sm mb-4" data-mock="true">
+                            Information about our certification process and portfolio building requirements.
+                        </p>
+                        <div class="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                            <span data-mock="true">Web Page</span>
+                            <span data-mock="true">Available</span>
+                        </div>
+                        <button class="w-full py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors duration-300" data-event="click:viewCertification" data-implementation="Should navigate to certification page">
+                            <i class="fas fa-external-link-alt mr-2"></i>Learn More
+                        </button>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ResourcesSection -->
+
+    <!-- Impact Section -->
+    <!-- @COMPONENT: ImpactSection [testimonials and map visualization] -->
+    <section id="impact" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-orbitron font-bold mb-6 text-neon">Our Impact</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-mock="true">
+                    Real stories from real women whose lives have been transformed through technology education.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- @MAP: stats.map(stat => ( -->
+                <div class="text-center bg-muted rounded-2xl p-8 neon-glow fade-in">
+                    <div class="text-4xl font-orbitron font-bold text-neon mb-2" data-mock="true">150+</div>
+                    <div class="text-lg text-foreground font-semibold mb-2" data-mock="true">Women Trained</div>
+                    <div class="text-sm text-muted-foreground" data-mock="true">Across 12 villages</div>
+                </div>
+                <div class="text-center bg-muted rounded-2xl p-8 neon-glow-blue fade-in">
+                    <div class="text-4xl font-orbitron font-bold text-neon-blue mb-2" data-mock="true">85%</div>
+                    <div class="text-lg text-foreground font-semibold mb-2" data-mock="true">Employment Rate</div>
+                    <div class="text-sm text-muted-foreground" data-mock="true">Within 6 months</div>
+                </div>
+                <div class="text-center bg-muted rounded-2xl p-8 neon-glow fade-in">
+                    <div class="text-4xl font-orbitron font-bold text-neon mb-2" data-mock="true">$50K+</div>
+                    <div class="text-lg text-foreground font-semibold mb-2" data-mock="true">Total Earnings</div>
+                    <div class="text-sm text-muted-foreground" data-mock="true">Generated by graduates</div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- @MAP: testimonials.map(testimonial => ( -->
+                <div class="bg-muted rounded-2xl p-8 neon-glow hover-glow transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-6">
+                        <!-- Placeholder for testimonial author photo -->
+                        <!-- Portrait of a confident Pakistani woman in professional attire -->
+                        <img src="https://pixabay.com/get/gf08049eea24bfbdf68a162fa51354a62746f76f32221ddb958f33ba46680bd38e70349dc1d634e4ad674b921a633d333ad230eaba01aa493a0db811aaa1d815b_1280.jpg" alt="Fatima - Program Graduate" class="w-16 h-16 rounded-full mr-4 neon-glow" />
+                        <div>
+                            <h4 class="text-lg font-semibold text-foreground" data-mock="true">Fatima Khan</h4>
+                            <p class="text-sm text-neon" data-mock="true">Web Developer • Lahore</p>
+                        </div>
+                    </div>
+                    <p class="text-foreground leading-relaxed mb-4" data-mock="true">
+                        "ReCode didn't just teach me to code – it gave me a new identity. From a flood victim to a freelance web developer earning enough to support my family. The journey seemed impossible, but their support made it real."
+                    </p>
+                    <div class="flex text-secondary">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-8 neon-glow-blue hover-glow-blue transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-6">
+                        <!-- Portrait of a young Pakistani woman working on laptop -->
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150" alt="Aisha - Digital Marketing Specialist" class="w-16 h-16 rounded-full mr-4 neon-glow-blue" />
+                        <div>
+                            <h4 class="text-lg font-semibold text-foreground" data-mock="true">Aisha Malik</h4>
+                            <p class="text-sm text-neon-blue" data-mock="true">Digital Marketer • Remote</p>
+                        </div>
+                    </div>
+                    <p class="text-foreground leading-relaxed mb-4" data-mock="true">
+                        "The digital marketing course opened doors I never knew existed. Now I manage social media for three international clients from my home in a small village. Technology has truly broken geographical barriers."
+                    </p>
+                    <div class="flex text-secondary">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <!-- Map Visualization -->
+            <div class="bg-muted rounded-2xl p-8 neon-glow fade-in">
+                <h3 class="text-2xl font-orbitron font-bold text-center text-neon mb-8">Our Reach</h3>
+                <div class="relative h-64 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl overflow-hidden">
+                    <!-- @FUNCTIONALITY: Interactive map showing program locations and impact metrics -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marked-alt text-6xl text-neon mb-4"></i>
+                            <p class="text-xl font-semibold text-foreground" data-mock="true">Interactive Impact Map</p>
+                            <p class="text-sm text-muted-foreground" data-mock="true">Coming Soon - Visualizing our growing network across Pakistan</p>
+                        </div>
+                    </div>
+                    <!-- Decorative elements -->
+                    <div class="absolute top-4 left-4 w-3 h-3 bg-primary rounded-full neon-glow animate-pulse"></div>
+                    <div class="absolute top-12 right-8 w-2 h-2 bg-secondary rounded-full neon-glow-blue animate-pulse"></div>
+                    <div class="absolute bottom-8 left-12 w-4 h-4 bg-primary rounded-full neon-glow animate-pulse"></div>
+                    <div class="absolute bottom-4 right-4 w-2 h-2 bg-secondary rounded-full neon-glow-blue animate-pulse"></div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Cards -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <!-- @MAP: comingSoonItems.map(item => ( -->
+                <div class="bg-muted rounded-xl p-6 neon-glow text-center fade-in">
+                    <i class="fas fa-video text-3xl text-neon mb-4"></i>
+                    <h4 class="text-lg font-orbitron font-bold text-foreground mb-2" data-mock="true">Video Stories</h4>
+                    <p class="text-sm text-muted-foreground mb-4" data-mock="true">Documentary series featuring graduate journeys</p>
+                    <span class="inline-block px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-semibold" data-mock="true">Coming Soon</span>
+                </div>
+                <div class="bg-muted rounded-xl p-6 neon-glow-blue text-center fade-in">
+                    <i class="fas fa-chart-bar text-3xl text-neon-blue mb-4"></i>
+                    <h4 class="text-lg font-orbitron font-bold text-foreground mb-2" data-mock="true">Impact Dashboard</h4>
+                    <p class="text-sm text-muted-foreground mb-4" data-mock="true">Real-time tracking of program outcomes</p>
+                    <span class="inline-block px-3 py-1 bg-secondary/20 text-secondary text-xs rounded-full font-semibold" data-mock="true">Coming Soon</span>
+                </div>
+                <div class="bg-muted rounded-xl p-6 neon-glow text-center fade-in">
+                    <i class="fas fa-network-wired text-3xl text-neon mb-4"></i>
+                    <h4 class="text-lg font-orbitron font-bold text-foreground mb-2" data-mock="true">Alumni Network</h4>
+                    <p class="text-sm text-muted-foreground mb-4" data-mock="true">Connect graduates for mentorship and collaboration</p>
+                    <span class="inline-block px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-semibold" data-mock="true">Coming Soon</span>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ImpactSection -->
+
+    <!-- Get Involved Section -->
+    <!-- @COMPONENT: GetInvolvedSection [three neon CTA cards] -->
+    <section id="get-involved" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-orbitron font-bold mb-6 text-neon">Get Involved</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-mock="true">
+                    Join our mission to transform lives through technology. Every contribution makes a difference.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- @MAP: involvementOptions.map(option => ( -->
+                <div class="bg-muted rounded-2xl p-8 neon-glow hover-glow transition-all duration-300 text-center fade-in">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary rounded-full flex items-center justify-center neon-glow">
+                        <i class="fas fa-hands-helping text-3xl text-primary-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-orbitron font-bold text-neon mb-4" data-mock="true">Volunteer</h3>
+                    <p class="text-muted-foreground leading-relaxed mb-6" data-mock="true">
+                        Share your skills as a mentor, instructor, or support coordinator. Help us scale our impact through dedicated volunteers.
+                    </p>
+                    <ul class="text-left space-y-2 mb-8">
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Remote teaching opportunities</span>
+                        </li>
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Flexible time commitment</span>
+                        </li>
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Professional development</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/80 transition-colors duration-300" data-event="click:handleVolunteer">
+                        Join as Volunteer
+                    </button>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-8 neon-glow-blue hover-glow-blue transition-all duration-300 text-center fade-in">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-secondary rounded-full flex items-center justify-center neon-glow-blue">
+                        <i class="fas fa-heart text-3xl text-secondary-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-orbitron font-bold text-neon-blue mb-4" data-mock="true">Donate</h3>
+                    <p class="text-muted-foreground leading-relaxed mb-6" data-mock="true">
+                        Support our programs with financial contributions. Every donation directly funds training, equipment, and student support.
+                    </p>
+                    <ul class="text-left space-y-2 mb-8">
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">$50 sponsors one student</span>
+                        </li>
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">100% goes to programs</span>
+                        </li>
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span data-mock="true">Tax-deductible receipts</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-secondary text-secondary-foreground font-semibold rounded-lg hover:bg-secondary/80 transition-colors duration-300" data-event="click:handleDonate">
+                        Make a Donation
+                    </button>
+                </div>
+
+                <div class="bg-muted rounded-2xl p-8 neon-glow hover-glow transition-all duration-300 text-center fade-in">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-primary rounded-full flex items-center justify-center neon-glow">
+                        <i class="fas fa-handshake text-3xl text-primary-foreground"></i>
+                    </div>
+                    <h3 class="text-2xl font-orbitron font-bold text-neon mb-4" data-mock="true">Partner</h3>
+                    <p class="text-muted-foreground leading-relaxed mb-6" data-mock="true">
+                        Collaborate with us as a corporate partner, educational institution, or NGO to expand our reach and impact.
+                    </p>
+                    <ul class="text-left space-y-2 mb-8">
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Brand partnership opportunities</span>
+                        </li>
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">CSR alignment</span>
+                        </li>
+                        <li class="flex items-center text-sm text-foreground">
+                            <i class="fas fa-check text-secondary mr-3"></i>
+                            <span data-mock="true">Measurable impact reports</span>
+                        </li>
+                    </ul>
+                    <button class="w-full py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:bg-primary/80 transition-colors duration-300" data-event="click:handlePartnership">
+                        Explore Partnership
+                    </button>
+                </div>
+                <!-- @END_MAP )) -->
+            </div>
+
+            <div class="text-center mt-16 fade-in">
+                <div class="bg-muted rounded-2xl p-8 neon-glow">
+                    <h3 class="text-2xl font-orbitron font-bold text-neon mb-4" data-mock="true">Ready to Make a Difference?</h3>
+                    <p class="text-lg text-muted-foreground mb-6" data-mock="true">
+                        Every action, no matter how small, contributes to transforming lives and building a more inclusive digital future.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg neon-glow hover-glow transition-all duration-300" data-event="click:handleContact">
+                            <i class="fas fa-envelope mr-2"></i>Contact Us
+                        </button>
+                        <button class="px-6 py-3 bg-transparent border-2 border-secondary text-secondary font-semibold rounded-lg neon-glow-blue hover-glow-blue transition-all duration-300" data-event="click:handleNewsletter">
+                            <i class="fas fa-bell mr-2"></i>Subscribe to Updates
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: GetInvolvedSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection [footer-style contact with social icons] -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-orbitron font-bold mb-6 text-neon">Connect With Us</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto" data-mock="true">
+                    Have questions about our programs? Want to share your story? We'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <!-- Contact Information -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-orbitron font-bold text-neon-blue mb-8">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center neon-glow mr-4">
+                                <i class="fas fa-envelope text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-foreground">Email</h4>
+                                <p class="text-muted-foreground" data-mock="true">hello@recode.org</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center neon-glow-blue mr-4">
+                                <i class="fas fa-phone text-secondary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-foreground">Phone</h4>
+                                <p class="text-muted-foreground" data-mock="true">+92 300 1234567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center neon-glow mr-4">
+                                <i class="fas fa-map-marker-alt text-primary-foreground"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-foreground">Location</h4>
+                                <p class="text-muted-foreground" data-mock="true">Lahore, Pakistan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="mt-12">
+                        <h4 class="text-xl font-orbitron font-bold text-neon mb-6">Follow Our Journey</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center neon-glow hover-glow transition-all duration-300" data-event="click:openSocial" data-implementation="Should open social media profile">
+                                <i class="fab fa-facebook-f text-primary-foreground"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center neon-glow-blue hover-glow-blue transition-all duration-300" data-event="click:openSocial" data-implementation="Should open social media profile">
+                                <i class="fab fa-twitter text-secondary-foreground"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center neon-glow hover-glow transition-all duration-300" data-event="click:openSocial" data-implementation="Should open social media profile">
+                                <i class="fab fa-instagram text-primary-foreground"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center neon-glow-blue hover-glow-blue transition-all duration-300" data-event="click:openSocial" data-implementation="Should open social media profile">
+                                <i class="fab fa-linkedin-in text-secondary-foreground"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary rounded-full flex items-center justify-center neon-glow hover-glow transition-all duration-300" data-event="click:openSocial" data-implementation="Should open GitHub profile">
+                                <i class="fab fa-github text-primary-foreground"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-orbitron font-bold text-neon mb-8">Send a Message</h3>
+                    <form class="space-y-6" data-event="submit:handleContactForm" data-implementation="Should handle form submission with validation">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-foreground mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground placeholder-muted-foreground" placeholder="Your name" data-bind="form.name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-foreground mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground placeholder-muted-foreground" placeholder="your@email.com" data-bind="form.email">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-foreground mb-2">Subject</label>
+                            <select id="subject" name="subject" required class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground" data-bind="form.subject">
+                                <option value="" disabled selected data-mock="true">Select a topic</option>
+                                <option value="general" data-mock="true">General Inquiry</option>
+                                <option value="programs" data-mock="true">Program Information</option>
+                                <option value="volunteer" data-mock="true">Volunteer Opportunities</option>
+                                <option value="partnership" data-mock="true">Partnership</option>
+                                <option value="donation" data-mock="true">Donation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-foreground mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 bg-muted border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-foreground placeholder-muted-foreground resize-none" placeholder="Tell us about your inquiry..." data-bind="form.message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-primary text-primary-foreground font-semibold rounded-lg neon-glow hover-glow transition-all duration-300">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="border-t border-border pt-12 text-center fade-in">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-orbitron font-bold text-neon mb-4">ReCode</h2>
+                    <p class="text-lg text-muted-foreground" data-mock="true">
+                        Empowering women through technology, one line of code at a time.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
+                    <p data-mock="true">&copy; 2024 ReCode. All rights reserved.</p>
+                    <p class="mt-2 sm:mt-0">
+                        <span data-mock="true">Built with </span>
+                        <i class="fas fa-laptop-code text-primary mx-1"></i>
+                        <span data-mock="true"> by rimmi</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <script>
+    // TODO: Implement smooth scrolling, mobile menu toggle, form handling, and other interactive features
+    (function() {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('[data-event="click:toggleMobileMenu"]');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 10, 15, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(10, 10, 15, 0.9)';
+            }
+        });
+
+        // Form submission placeholder
+        document.querySelector('form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // TODO: Implement actual form submission logic
+            alert('Thank you for your message! We will get back to you soon.');
+        });
+
+        console.log('ReCode website initialized');
+    })();
+    </script>
+</body>
+</html>
